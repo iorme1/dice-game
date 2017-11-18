@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Midnight</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/index.css">
+  </head>
+  <body>
+    <h1>Midnight</h1>
+
+    <audio id="sound" src="sounds/roll.wav"></audio>
+
+    <div class="stakes">
+      <p>CHOOSE YOUR STAKES:</p>
+      <button>$1</button>
+      <button>$2</button>
+      <button>$3</button>
+      <button>$4</button>
+      <button>$5</button>
+    </div><br />
+    <strong>CURRENT STAKE: </strong><span id="current-stake"></span>
+
+
+
+    <div class="dice-select">
+      <div>Player 1's Current Dice Selection: <span class="p1-dice-select"></span></div><br />
+      <div>Player 2's Current Dice Selection: <span class="p2-dice-select"></span></div><br />
+    </div><br />
+
+
+    <div class="current-roll">
+      <span style="color:white;">CURRENT ROLL:</span>
+      <div class="c-roll" id="0"></div>
+      <div class="c-roll" id="1"></div>
+      <div class="c-roll" id="2"></div>
+      <div class="c-roll" id="3"></div>
+      <div class="c-roll" id="4"></div>
+      <div class="c-roll" id="5"></div>
+    </div><br />
+
+  <div class="roll-buttons">
+    <button id="p1-roll" onclick="roll()" class="">Player 1 Roll</button>
+    <button id="p2-roll" class="hide" onclick="roll()">Player 2 Roll</button>
+  </div>
+
+  <table class="scoreboard">
+    <th>Scoreboard</th>
+    <tr>
+      <td>Player 1 Total:<span id="p1-score">$0</span></td>
+    </tr>
+    <tr>
+      <td>Player 2 Total:<span id="p2-score">$0</span></td>
+    </tr>
+  </table>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

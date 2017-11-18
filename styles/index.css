@@ -1,0 +1,86 @@
+body {
+  background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+span {
+  margin-left: 20px;
+}
+
+.dice-select {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.roll-buttons {
+  text-align: center;
+}
+
+.current-roll {
+  text-align: center;
+  color: red;
+  font-size: 1.5em;
+}
+
+.current-roll div {
+  display: inline;
+  margin-left: 20px;
+  font-size: 1.5em;
+  border-style: groove;
+}
+
+
+[id='0']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+[id='1']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+[id='2']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+[id='3']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+[id='4']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+[id='5']:hover {
+  cursor: pointer;
+  color: #0000CD;
+}
+
+.roll-buttons button {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+
+}
+
+.stakes button {
+  font-size: 1.2em;
+  color: #32CD32;
+}
+
+.scoreboard {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 1.5em;
+  color: white;
+}
+
+#current-stake {
+  font-size: 1.3em
+}
