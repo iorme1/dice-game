@@ -88,3 +88,50 @@ span {
 .dolla {
   font-size: 1.3em;
 }
+
+
+#p1-score, #p2-score, #p3-score, #p4-score, #p5-score {
+  margin-left: 0;
+}
+
+#table {
+  text-decoration: underline;
+}
+
+#display-stake {
+  position: absolute;
+  top: 2%;
+  right: 42%;
+  font-size: 1.5em;
+}
+
+#display-pot {
+  position: absolute;
+  top:8%;
+  right: 42%;
+  font-size: 1.5em;
+}
+
+.players button {
+  cursor: pointer;
+}
+
+.r {
+  color: red;
+}
+
+.b {
+  color: black;
+}
+
+.p {
+  color: pink;
+}
+
+.bl {
+  color: blue;
+}
+
+.o {
+  color: orange;
+}
