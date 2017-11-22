@@ -12,7 +12,6 @@ let player1Dice = document.querySelector('.p1-dice-select');
 let player2Dice = document.querySelector('.p2-dice-select');
 
 
-
 // all players dice selections
 let allPlayersDice = document.querySelector('.dice-select');
 let allPlayersDiceHolders = allPlayersDice.querySelectorAll('div');
@@ -89,15 +88,19 @@ function roll() {
 }
 
 function scoreTotalerP1() {
+
+
+
+
   let p1Qualify = [];
   let player1Scores = Array.from(player1Dice.querySelectorAll('span'));
   player1Scores.forEach(function(score){
-    if ((Number(score.textContent) === 1 || Number(score.textContent) === 4 ) && p1Qualify.length < 2 ) {
-      if (p1Qualify[0] !== Number(score.textContent) || p1Qualify.length === 0) {
-         p1Qualify.push(Number(score.textContent));
+    if ( (score.classList.contains('1') || score.classList.contains('4')) && p1Qualify.length < 2 ) {
+      if (p1Qualify[0] !== Number(score.classList) || p1Qualify.length === 0) {
+         p1Qualify.push(Number(score.classList));
        }
     }
-    totalForp1 += Number(score.textContent);
+    totalForp1 += Number(score.classList);
   });
 
   p1Qualify.length !== 2 ? player1Dice.innerHTML = "YOU DON'T QUALIFY!" : player1Dice.innerHTML = "Final Score: " + totalForp1;
@@ -107,12 +110,12 @@ function scoreTotalerP2() {
   let p2Qualify = [];
   let player2Scores = Array.from(player2Dice.querySelectorAll('span'));
   player2Scores.forEach(function(score){
-    if ( (Number(score.textContent) === 1 || Number(score.textContent) === 4 ) && p2Qualify.length < 2 ) {
-      if (p2Qualify[0] !== Number(score.textContent) || p2Qualify.length === 0) {
-         p2Qualify.push(Number(score.textContent));
+    if ( (score.classList.contains('1') || score.classList.contains('4')) && p2Qualify.length < 2 ) {
+      if (p2Qualify[0] !== Number(score.classList) || p2Qualify.length === 0) {
+         p2Qualify.push(Number(score.classList));
        }
     }
-    totalForp2 += Number(score.textContent);
+    totalForp2 += Number(score.classList);
   });
 
   p2Qualify.length !== 2 ? player2Dice.innerHTML = "YOU DON'T QUALIFY!" : player2Dice.innerHTML =  "Final Score: " + totalForp2;
@@ -152,7 +155,12 @@ function chosen(num,i) {
   // Player 2's turn is over
   if (player1Roll.classList.contains('hide') && counter === 6) {
     counter = 0;
-    player2Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
+
+
+    // here  !!!!
+    player2Dice.innerHTML +=  `<span style="font-size: 6rem; color:black;" class="${this.dataset.value}">${this.innerHTML}</span>`;
+
+
     this.innerHTML = "";
     player1Roll.classList.remove("hide");  // show player 1's roll button
     player2Roll.className += " hide";  // hide player 2's roll button
@@ -162,7 +170,13 @@ function chosen(num,i) {
     // Player 1's turn is over
   } else if (player2Roll.classList.contains('hide') && counter === 6) {
     counter = 0;
-    player1Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
+
+
+    // here !!!!
+    player1Dice.innerHTML +=  `<span style="font-size: 6rem; color:black;" class="${this.dataset.value}">${this.innerHTML}</span>`;
+
+
+
     this.innerHTML = "";
     player2Roll.classList.remove("hide");
     player1Roll.className += " hide";
@@ -178,8 +192,22 @@ function chosen(num,i) {
    if (counter === 0) {
      return;
     }
+
+
+
+
+    // here !!!
   // adds the chosen dice number to the current player's dice selection
-  player1Roll.classList.contains('hide') ? player2Dice.innerHTML +=  `<span>${this.innerHTML}</span>` : player1Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
+  //player1Roll.classList.contains('hide') ? player2Dice.innerHTML +=  `<span>${this.innerHTML}</span>` : player1Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
+
+
+  if (player1Roll.classList.contains('hide')) {
+    player2Dice.innerHTML +=  `<span style="font-size: 6rem; color:black;" class="${this.dataset.value}">${this.innerHTML}</span>`;
+  }
+  if (player2Roll.classList.contains('hide')) {
+    player1Dice.innerHTML +=  `<span style="font-size: 6rem; color:black;" class="${this.dataset.value}">${this.innerHTML}</span>`;
+  }
+
   // removes the chosen dice number from current roll
   this.innerHTML = "";
 }
@@ -194,14 +222,14 @@ function playSoundAndDiceAnimation() {
       output = '';
 
       for (var i = 0; i < 6; i++) {
-        faceValue = Number(document.getElementById(`${i}`).innerHTML) - 1;
+        faceValue = Number(document.getElementById(`${i}`).dataset.value) - 1;
         console.log(faceValue);
         if (faceValue !== "" && faceValue !== -1) {
           output = "&#x268" + faceValue + "; ";
-          document.getElementById(`dizice${i}`).innerHTML = output;
+          document.getElementById(`${i}`).innerHTML = output;
         } else {
           output = "";
-          document.getElementById(`dizice${i}`).innerHTML = output;
+          document.getElementById(`${i}`).innerHTML = output;
         }
       }
 

@@ -1,6 +1,5 @@
 body {
-  /* background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg'); */
-  background-image:url('images/dice.jpg');
+  background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   color: white;
@@ -25,15 +24,13 @@ span {
 
 .current-roll {
   text-align: center;
-  color: red;
-  font-size: 1.5em;
+  font-size: 3em;
 }
 
 .current-roll div {
   display: inline;
   margin-left: 20px;
   font-size: 1.5em;
-  border-style: groove;
 }
 
 
