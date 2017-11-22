@@ -1,5 +1,6 @@
 body {
-  background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');
+  /* background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg'); */
+  background-image:url('images/dice.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   color: white;
@@ -62,8 +63,8 @@ span {
 }
 
 .roll-buttons button {
-  width: 100px;
-  height: 35px;
+  /*width: 100px;
+  height: 35px; */
   cursor: pointer;
 
 }
@@ -110,10 +111,12 @@ span {
   top:8%;
   right: 42%;
   font-size: 1.5em;
+  margin-top:60px;
 }
 
 .players button {
   cursor: pointer;
+  color: red;
 }
 
 .r {
@@ -134,4 +137,15 @@ span {
 
 .o {
   color: orange;
+}
+
+#dizice0, #dizice1, #dizice2, #dizice3, #dizice4, #dizice5 {font-size: 6rem;}
+
+.dice-animation {
+  text-align: center;
+}
+
+.roll-area {
+
+
 }

@@ -3,9 +3,12 @@
   <head>
     <title>Midnight</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
+    <div class="container">
 
     <h1>Midnight</h1>
 
@@ -13,43 +16,54 @@
 
     <div class="stakes">
       <p>CHOOSE YOUR STAKES:</p>
-      <button>$1</button>
-      <button>$2</button>
-      <button>$3</button>
-      <button>$4</button>
-      <button>$5</button>
+      <button class="btn btn-default">$1</button>
+      <button class="btn btn-default">$2</button>
+      <button class="btn btn-default">$3</button>
+      <button class="btn btn-default">$4</button>
+      <button class="btn btn-default">$5</button>
     </div><br />
 
     <div class="players">
       <p>CHOOSE NUMBER OF PLAYERS:</p>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
+      <button class="btn btn-default">2</button>
+      <button class="btn btn-default">3</button>
+      <button class="btn btn-default">4</button>
+      <button class="btn btn-default">5</button>
     </div><br />
 
-    <h3><a href="https://en.wikipedia.org/wiki/Midnight_(game)">Rules Page</a></h3>
-    
-    <div id="display-stake">
+    <h3 class="btn btn-default"><a href="https://en.wikipedia.org/wiki/Midnight_(game)">Rules Page</a></h3>
+
+    <div id="display-stake" class="page-header">
       <strong>CURRENT STAKE: </strong><span>$</span><span id="current-stake"></span>
     </div>
-    <div id="display-pot">
+    <div id="display-pot" class="page-header">
       <strong>CURRENT POT: </strong><span>$</span><span id="current-pot"></h2>
+    </div>
+
+  <div class="roll-area">
+    <div class="dice-animation">
+      <span id="dizice0"></span>
+      <span id="dizice1"></span>
+      <span id="dizice2"></span>
+      <span id="dizice3"></span>
+      <span id="dizice4"></span>
+      <span id="dizice5"></span>
     </div>
 
     <div class="current-roll">
       <span style="color:white;">CURRENT ROLL:</span>
-      <div class="c-roll" id="0"></div>
-      <div class="c-roll" id="1"></div>
-      <div class="c-roll" id="2"></div>
-      <div class="c-roll" id="3"></div>
-      <div class="c-roll" id="4"></div>
-      <div class="c-roll" id="5"></div>
+      <div data-value="" class="c-roll" id="0"></div>
+      <div data-value="" class="c-roll" id="1"></div>
+      <div data-value="" class="c-roll" id="2"></div>
+      <div data-value="" class="c-roll" id="3"></div>
+      <div data-value="" class="c-roll" id="4"></div>
+      <div data-value="" class="c-roll" id="5"></div>
     </div><br />
+  </div>
 
   <div class="roll-buttons">
-    <button id="p1-roll" onclick="roll()" class="">Player 1 Roll Dice</button>
-    <button id="p2-roll" class="hide" onclick="roll()">Player 2 Roll Dice</button>
+    <button id="p1-roll" onclick="roll()" class="btn btn-info">Player 1 Roll Dice</button>
+    <button id="p2-roll" class="btn btn-info hide" onclick="roll()">Player 2 Roll Dice</button>
   </div><br /><br /><br />
 
     <div class="dice-select">
@@ -81,6 +95,7 @@
     </tr>
   </table>
 
+</div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="scripts/index.js"></script>

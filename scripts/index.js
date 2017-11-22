@@ -73,6 +73,7 @@ function roll() {
   if (firstRoll) {
     for (var k = 0; k < 6; k++) {
       document.getElementById(`${k}`).innerHTML = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+      document.getElementById(`${k}`).dataset.value = document.getElementById(`${k}`).innerHTML; // set random number to data-value
     }
     firstRoll = false;
     return;
@@ -82,6 +83,7 @@ function roll() {
   if (firstRoll === false) {
     for (var i = 0; i < 6; i++) {
       document.getElementById(`${i}`).innerHTML === "" ? "" : document.getElementById(`${i}`).innerHTML = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+      document.getElementById(`${i}`).dataset.value = document.getElementById(`${i}`).innerHTML; // set random number to data-value
     }
   }
 }
@@ -124,8 +126,19 @@ function scoreboardHandler() {
   if (player2Dice.innerHTML === "YOU DON'T QUALIFY!") {
     totalForp2 = 0;
   }
+
+  // work on tie section, below. currently it just goes into a new round with any1 winning.
+  // which is ok, but we need to double the stakes when its a tie....
+  // also, think abnbout using current pot to add to players scoreboard score instead of stakeCurrent
+
+
+  if ( (totalForp1 !== -5 && totalForp1 !== 0) && (totalForp1 === totalForp2) ) {
+    swal("It's a Tie!")
+    return;
+  }
   if (totalForp1 !== -5 && totalForp2 !== -5 && stakeCurrent.innerHTML !== "") {
     totalForp1 > totalForp2 ? p1Scoreboard.innerHTML = (Number(p1Scoreboard.innerHTML) + Number(stakeCurrent.innerHTML)) : p2Scoreboard.innerHTML = (Number(p2Scoreboard.innerHTML) + Number(stakeCurrent.innerHTML));
+    totalForp1 > totalForp2 ? swal("Player 1 Wins the monies!") : swal("Player 2 Wins the monies!");
     return;
   }
 }
@@ -142,7 +155,7 @@ function chosen(num,i) {
     player2Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
     this.innerHTML = "";
     player1Roll.classList.remove("hide");  // show player 1's roll button
-    player2Roll.className += "hide";  // hide player 2's roll button
+    player2Roll.className += " hide";  // hide player 2's roll button
     //total player 2's score
     scoreTotalerP2();
 
@@ -152,7 +165,7 @@ function chosen(num,i) {
     player1Dice.innerHTML +=  `<span>${this.innerHTML}</span>`;
     this.innerHTML = "";
     player2Roll.classList.remove("hide");
-    player1Roll.className += "hide";
+    player1Roll.className += " hide";
 
     // total player 1's score
     scoreTotalerP1();
@@ -171,11 +184,27 @@ function chosen(num,i) {
   this.innerHTML = "";
 }
 
-function playSound() {
+function playSoundAndDiceAnimation() {
   if (preventSound === false) {
     audio.currentTime = 0;
     audio.play();
   }
+  var i,
+      faceValue,
+      output = '';
+
+      for (var i = 0; i < 6; i++) {
+        faceValue = Number(document.getElementById(`${i}`).innerHTML) - 1;
+        console.log(faceValue);
+        if (faceValue !== "" && faceValue !== -1) {
+          output = "&#x268" + faceValue + "; ";
+          document.getElementById(`dizice${i}`).innerHTML = output;
+        } else {
+          output = "";
+          document.getElementById(`dizice${i}`).innerHTML = output;
+        }
+      }
+
 }
 
 function currentStakes() {
@@ -196,8 +225,8 @@ currentRoll.forEach(function(die){
   die.addEventListener('click', chosen);
 });
 
-player1Roll.addEventListener('click', playSound);
-player2Roll.addEventListener('click', playSound);
+player1Roll.addEventListener('click', playSoundAndDiceAnimation);
+player2Roll.addEventListener('click', playSoundAndDiceAnimation);
 stakeBtns.forEach(function(stake){
   stake.addEventListener('click', currentStakes);
 });
