@@ -1,5 +1,6 @@
 body {
-  background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');
+  /*background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');*/
+  background-image:url('https://previews.123rf.com/images/andreypopov/andreypopov1301/andreypopov130100530/17389815-Croupier-throwing-a-pair-of-red-dice-across-the-green-felt-on-a-card-table-in-a-casino-in-a-game-of--Stock-Photo.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   color: white;
@@ -15,7 +16,7 @@ span {
 
 .dice-select {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .roll-buttons {
@@ -31,6 +32,7 @@ span {
   display: inline;
   margin-left: 20px;
   font-size: 1.5em;
+  color: red;
 }
 
 
@@ -101,6 +103,7 @@ span {
   top: 2%;
   right: 42%;
   font-size: 1.5em;
+  color: white;
 }
 
 #display-pot {
@@ -109,6 +112,7 @@ span {
   right: 42%;
   font-size: 1.5em;
   margin-top:60px;
+  color: white;
 }
 
 .players button {
@@ -136,13 +140,7 @@ span {
   color: orange;
 }
 
-#dizice0, #dizice1, #dizice2, #dizice3, #dizice4, #dizice5 {font-size: 6rem;}
 
 .dice-animation {
   text-align: center;
-}
-
-.roll-area {
-
-
 }

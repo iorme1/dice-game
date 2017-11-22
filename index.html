@@ -10,81 +10,81 @@
   <body>
     <div class="container">
 
-    <h1>Midnight</h1>
+      <h1>Midnight Dice Game</h1><br />
 
-    <audio id="sound" src="sounds/roll.wav"></audio>
+      <audio id="sound" src="sounds/roll.wav"></audio>
 
-    <div class="stakes">
-      <p>CHOOSE YOUR STAKES:</p>
-      <button class="btn btn-default">$1</button>
-      <button class="btn btn-default">$2</button>
-      <button class="btn btn-default">$3</button>
-      <button class="btn btn-default">$4</button>
-      <button class="btn btn-default">$5</button>
-    </div><br />
+      <div class="stakes">
+        <p><strong>CHOOSE YOUR STAKES:</strong></p>
+        <button class="btn btn-default">$1</button>
+        <button class="btn btn-default">$2</button>
+        <button class="btn btn-default">$3</button>
+        <button class="btn btn-default">$4</button>
+        <button class="btn btn-default">$5</button>
+      </div><br />
 
-    <div class="players">
-      <p>CHOOSE NUMBER OF PLAYERS:</p>
-      <button class="btn btn-default">2</button>
-      <button class="btn btn-default">3</button>
-      <button class="btn btn-default">4</button>
-      <button class="btn btn-default">5</button>
-    </div><br />
+      <div class="players">
+        <p><strong>CHOOSE NUMBER OF PLAYERS:</strong></p>
+        <button class="btn btn-default">2</button>
+        <button class="btn btn-default">3</button>
+        <button class="btn btn-default">4</button>
+        <button class="btn btn-default">5</button>
+      </div><br />
 
-    <h3 class="btn btn-default"><a href="https://en.wikipedia.org/wiki/Midnight_(game)">Rules Page</a></h3>
+      <h3 class="btn btn-default"><a href="https://en.wikipedia.org/wiki/Midnight_(game)">Rules Page</a></h3>
 
-    <div id="display-stake" class="page-header">
-      <strong>CURRENT STAKE: </strong><span>$</span><span id="current-stake"></span>
+      <div id="display-stake" class="page-header">
+        <strong>CURRENT STAKE: </strong><span>$</span><span id="current-stake"></span>
+      </div>
+      <div id="display-pot" class="page-header">
+        <strong>CURRENT POT: </strong><span>$</span><span id="current-pot"></h2>
+      </div>
+
+
+      <div class="current-roll">
+        <span style="color:white;">CURRENT ROLL:</span>
+        <div data-value="" class="c-roll" id="0"></div>
+        <div data-value="" class="c-roll" id="1"></div>
+        <div data-value="" class="c-roll" id="2"></div>
+        <div data-value="" class="c-roll" id="3"></div>
+        <div data-value="" class="c-roll" id="4"></div>
+        <div data-value="" class="c-roll" id="5"></div>
+      </div><br />
     </div>
-    <div id="display-pot" class="page-header">
-      <strong>CURRENT POT: </strong><span>$</span><span id="current-pot"></h2>
-    </div>
 
+    <div class="roll-buttons">
+      <button id="p1-roll" onclick="roll()" class="btn btn-info">Player 1 Roll Dice</button>
+      <button id="p2-roll" class="btn btn-info hide" onclick="roll()">Player 2 Roll Dice</button>
+    </div><br /><br /><br />
 
-    <div class="current-roll">
-      <span style="color:white;">CURRENT ROLL:</span>
-      <div data-value="" class="c-roll" id="0"></div>
-      <div data-value="" class="c-roll" id="1"></div>
-      <div data-value="" class="c-roll" id="2"></div>
-      <div data-value="" class="c-roll" id="3"></div>
-      <div data-value="" class="c-roll" id="4"></div>
-      <div data-value="" class="c-roll" id="5"></div>
-    </div><br />
-  </div>
-
-  <div class="roll-buttons">
-    <button id="p1-roll" onclick="roll()" class="btn btn-info">Player 1 Roll Dice</button>
-    <button id="p2-roll" class="btn btn-info hide" onclick="roll()">Player 2 Roll Dice</button>
-  </div><br /><br /><br />
-
-    <div class="dice-select">
-      <div class="hide r">Player 1's Current Dice Selection: <span class="p1-dice-select" data-num="0"></span></div><br />
-      <div class="hide o">Player 2's Current Dice Selection: <span class="p2-dice-select" data-num="0"></span></div><br />
-      <div class="hide b">Player 3's Current Dice Selection: <span class="p3-dice-select" data-num="0"></span></div><br />
-      <div class="hide bl">Player 4's Current Dice Selection: <span class="p4-dice-select" data-num="0"></span></div><br />
-      <div class="hide p">Player 5's Current Dice Selection: <span class="p5-dice-select" data-num="0"></span></div><br />
-    </div><br />
+      <div class="dice-select">
+        <div class="hide r">Player 1's Current Dice Selection: <span class="p1-dice-select" data-num="0"></span></div><br />
+        <div class="hide o">Player 2's Current Dice Selection: <span class="p2-dice-select" data-num="0"></span></div><br />
+        <div class="hide b">Player 3's Current Dice Selection: <span class="p3-dice-select" data-num="0"></span></div><br />
+        <div class="hide bl">Player 4's Current Dice Selection: <span class="p4-dice-select" data-num="0"></span></div><br />
+        <div class="hide p">Player 5's Current Dice Selection: <span class="p5-dice-select" data-num="0"></span></div><br />
+      </div><br />
 
 
 
-  <table class="scoreboard">
-    <th id="table">Scoreboard</th>
-    <tr>
-      <td class="hide r">Player 1 Total: <span>$</span><span id="p1-score">0</span></td>
-    </tr>
-    <tr>
-      <td class="hide o">Player 2 Total: <span>$</span><span id="p2-score">0</span></td>
-    </tr>
-    <tr>
-      <td class="hide b">Player 3 Total: <span>$</span><span id="p3-score">0</span></td>
-    </tr>
-    <tr>
-      <td class="hide bl">Player 4 Total: <span>$</span><span id="p4-score">0</span></td>
-    </tr>
-    <tr>
-      <td class="hide p">Player 5 Total: <span>$</span><span id="p5-score">0</span></td>
-    </tr>
-  </table>
+    <table class="scoreboard">
+      <th id="table">Scoreboard</th>
+      <tr>
+        <td class="hide r">Player 1 Total: <span>$</span><span id="p1-score">0</span></td>
+      </tr>
+      <tr>
+        <td class="hide o">Player 2 Total: <span>$</span><span id="p2-score">0</span></td>
+      </tr>
+      <tr>
+        <td class="hide b">Player 3 Total: <span>$</span><span id="p3-score">0</span></td>
+      </tr>
+      <tr>
+        <td class="hide bl">Player 4 Total: <span>$</span><span id="p4-score">0</span></td>
+      </tr>
+      <tr>
+        <td class="hide p">Player 5 Total: <span>$</span><span id="p5-score">0</span></td>
+      </tr>
+    </table>
 
 </div>
 
