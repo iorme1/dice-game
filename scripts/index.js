@@ -105,6 +105,19 @@ function scoreTotalerP1() {
     totalForp1 += Number(score.classList);
   });
 
+
+
+
+  if (totalForp1 === 24) {
+    document.body.className += " midnight ";
+    setTimeout(function(){
+      document.body.classList.remove('midnight');
+    }, 3000);
+  }
+
+
+
+
   p1Qualify.length !== 2 ? player1Dice.innerHTML = "YOU DON'T QUALIFY!" : player1Dice.innerHTML = "Final Score: " + totalForp1;
 }
 
@@ -119,6 +132,21 @@ function scoreTotalerP2() {
     }
     totalForp2 += Number(score.classList);
   });
+
+
+
+
+  if (totalForp2 === 24) {
+    document.body.className += " midnight ";
+    setTimeout(function(){
+      document.body.classList.remove('midnight');
+    }, 3000);
+  }
+
+
+
+
+
 
   p2Qualify.length !== 2 ? player2Dice.innerHTML = "YOU DON'T QUALIFY!" : player2Dice.innerHTML =  "Final Score: " + totalForp2;
 }

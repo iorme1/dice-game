@@ -26,6 +26,7 @@ span {
 .current-roll {
   text-align: center;
   font-size: 3em;
+  text-shadow: 4px 4px black;
 }
 
 .current-roll div {
@@ -82,7 +83,19 @@ span {
 }
 
 #current-stake {
-  font-size: 1.3em
+  font-size: 1.3em;
+}
+
+#c-roll-text {
+  color:white;
+}
+
+#current-stake-text {
+  text-shadow: 2px 2px blue;
+}
+
+#current-pot-text {
+  text-shadow: 2px 2px blue;
 }
 
 .dolla {
@@ -122,25 +135,40 @@ span {
 
 .r {
   color: red;
+  text-shadow: 2px 2px black;
 }
 
 .b {
-  color: black;
+  color: lime;
+  text-shadow: 2px 2px black;
 }
 
 .p {
   color: pink;
+  text-shadow: 2px 2px black;
 }
 
 .bl {
   color: blue;
+  text-shadow: 2px 2px black;
 }
 
 .o {
   color: orange;
+  text-shadow: 2px 2px black;
 }
 
 
 .dice-animation {
   text-align: center;
+}
+
+.midnight {
+  background-image:url('https://www.photoshopcreative.co.uk/users/11239/thm1024/1335999679_midnight%20fin.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+td {
+  border-style:outset;
 }
