@@ -1,6 +1,5 @@
 body {
-  /*background-image:url('https://ak9.picdn.net/shutterstock/videos/13105709/thumb/6.jpg');*/
-  background-image:url('https://previews.123rf.com/images/andreypopov/andreypopov1301/andreypopov130100530/17389815-Croupier-throwing-a-pair-of-red-dice-across-the-green-felt-on-a-card-table-in-a-casino-in-a-game-of--Stock-Photo.jpg');
+  background-image:url('images/dice.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   color: white;
@@ -63,10 +62,7 @@ span {
 }
 
 .roll-buttons button {
-  /*width: 100px;
-  height: 35px; */
   cursor: pointer;
-
 }
 
 .stakes button {
@@ -75,12 +71,10 @@ span {
 }
 
 .scoreboard {
-  position: absolute;
-  right: 5px;
-  top: 5px;
   font-size: 1.5em;
   color: white;
 }
+
 
 #current-stake {
   font-size: 1.3em;
@@ -111,20 +105,14 @@ span {
   text-decoration: underline;
 }
 
+
 #display-stake {
-  position: absolute;
-  top: 2%;
-  right: 42%;
   font-size: 1.5em;
   color: white;
 }
 
 #display-pot {
-  position: absolute;
-  top:8%;
-  right: 42%;
   font-size: 1.5em;
-  margin-top:60px;
   color: white;
 }
 

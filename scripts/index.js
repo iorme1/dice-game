@@ -1,6 +1,9 @@
 // roll buttons
 let player1Roll = document.querySelector('#p1-roll');
 let player2Roll = document.querySelector('#p2-roll');
+let player3Roll = document.querySelector('#p3-roll');
+let player4Roll = document.querySelector('#p4-roll');
+let player5Roll = document.querySelector('#p5-roll');
 
 // adding players related elements
 let players =  document.querySelector('.players')
@@ -28,6 +31,10 @@ let currentPot = document.getElementById('current-pot');
 // scoreboard related elements
 let p1Scoreboard = document.getElementById('p1-score');
 let p2Scoreboard = document.getElementById('p2-score');
+let p3Scoreboard = document.getElementById('p3-score');
+let p4Scoreboard = document.getElementById('p4-score');
+let p5Scoreboard = document.getElementById('p5-score');
+
 
 let currentRoll = document.querySelectorAll('.c-roll');
 let audio = document.getElementById('sound');
@@ -35,6 +42,9 @@ let audio = document.getElementById('sound');
 // players' score holder variables (starts at -5 to cancel out adding the qualifying dice rolls of 1 and 4)
 let totalForp1 = -5;
 let totalForp2 = -5;
+let totalForp3 = -5;
+let totalForp4 = -5;
+let totalForp5 = -5;
 
 let counter = 0;  // keeps track of how many times a die has been chosen by a player during their turn
 let firstRoll = true;
@@ -105,19 +115,6 @@ function scoreTotalerP1() {
     totalForp1 += Number(score.classList);
   });
 
-
-
-
-  if (totalForp1 === 24) {
-    document.body.className += " midnight ";
-    setTimeout(function(){
-      document.body.classList.remove('midnight');
-    }, 3000);
-  }
-
-
-
-
   p1Qualify.length !== 2 ? player1Dice.innerHTML = "YOU DON'T QUALIFY!" : player1Dice.innerHTML = "Final Score: " + totalForp1;
 }
 
@@ -132,21 +129,6 @@ function scoreTotalerP2() {
     }
     totalForp2 += Number(score.classList);
   });
-
-
-
-
-  if (totalForp2 === 24) {
-    document.body.className += " midnight ";
-    setTimeout(function(){
-      document.body.classList.remove('midnight');
-    }, 3000);
-  }
-
-
-
-
-
 
   p2Qualify.length !== 2 ? player2Dice.innerHTML = "YOU DON'T QUALIFY!" : player2Dice.innerHTML =  "Final Score: " + totalForp2;
 }
